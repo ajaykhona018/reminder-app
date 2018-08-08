@@ -1,0 +1,10 @@
+<div class="container p-5">
+  <form>
+    <input type="text" name="email" id="email" placeholder="Email Address" [(ngModel)]="loginUserData.email">
+    <br>
+    <input type="password" name="password" id="password" placeholder="Password" [(ngModel)]="loginUserData.password">
+    <br>
+    <button class="btn btn-primary" (click)="btnLogin()">Login</button>
+  </form>
+</div>
+<a routerLink="register" routerLinkActive="active">Register</a>
