@@ -1,3 +1,33 @@
-<p>
-  Accounts works!
-</p>
+<div class="container my-2">
+  <form>
+    <div class="form-group row">
+      <label for="accountId" class="col-sm-2 col-form-label">AccountId</label>
+      <div class="col-sm-2">
+        <select class="form-control form-control-sm">
+          <option value="B">Begins With</option>
+          <option value="C">Contains</option>
+          <option value="E">Ends With</option>
+        </select>
+      </div>
+      <div class="col-sm-5">
+        <input type="text" class="form-control form-control-sm" id="accountId">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="company" class="col-sm-2 col-form-label">Company Name</label>
+      <div class="col-sm-2">
+        <select class="form-control  form-control-sm">
+          <option value="B">Begins With</option>
+          <option value="C">Contains</option>
+          <option value="E">Ends With</option>
+        </select>
+      </div>
+      <div class="col-sm-5">
+        <input type="text" class="form-control form-control-sm" id="company" placeholder="">
+      </div>
+    </div>
+    <button class="btn btn-primary">Search</button>
+  </form>
+  <div class="dropdown-divider"></div>
+</div>
+<app-displayaccounts [accounts]="searchResult"></app-displayaccounts>

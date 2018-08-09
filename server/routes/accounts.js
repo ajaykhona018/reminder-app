@@ -138,7 +138,7 @@ function accountJsonFromDatabase(accounts) {
                 name: accounts[i].name,
                 emailFlag: accounts[i].emailFlag,
                 smsFlag: accounts[i].smsFlag,
-                creditPeriod: accounts[i].smsFlag,
+                creditPeriod: accounts[i].creditPeriod,
                 email: [accounts[i].email],
                 phone: [accounts[i].phone]
             }

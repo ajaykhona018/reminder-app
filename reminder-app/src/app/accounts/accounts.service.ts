@@ -10,4 +10,7 @@ export class AccountsService {
   addAccount(account) {
     return this._http.post(Hosting.getUrl('/api/accounts/add'), account);
   }
+  getAccounts() {
+    return this._http.get(Hosting.getUrl('/api/accounts'));
+  }
 }

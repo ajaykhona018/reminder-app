@@ -28,6 +28,7 @@ import { AddAccountComponent } from './accounts/add-account/add-account.componen
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccountsService } from './accounts/accounts.service';
+import { DisplayaccountsComponent } from './accounts/displayaccounts/displayaccounts.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AccountsService } from './accounts/accounts.service';
     // ClientsComponent,
     LandingComponent,
     AccountsComponent,
-    AddAccountComponent
+    AddAccountComponent,
+    DisplayaccountsComponent
   ],
   imports: [
     BrowserModule,

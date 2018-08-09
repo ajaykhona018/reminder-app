@@ -17,8 +17,8 @@ const routes: Routes = [
     path: 'landing', component: LandingComponent, canActivate: [AuthGuardService], children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'accounts/add', component: AddAccountComponent },
-      { path: 'accounts', component: AccountsComponent }
+      { path: 'accounts', component: AccountsComponent },
+      { path: 'accounts/add', component: AddAccountComponent }
     ]
   }
 ];

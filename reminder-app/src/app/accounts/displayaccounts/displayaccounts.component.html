@@ -1,0 +1,53 @@
+<div class="row px-2 ml-5" *ngIf="selectCount > 0">
+  <div class="col-1 ">{{selectCount}} selected</div>
+  <button class="btn btn-sm btn-outline-primary col-1 mx-1">
+    <i class="fas fa-pen text-primary" title="Edit Selected Accounts"></i> Edit
+  </button>
+  <button class="btn btn-sm btn-outline-danger col-1">
+    <i class="fas fa-trash text-danger" title="Delete Selected Accounts"></i> Delete
+  </button>
+</div>
+<table class="table table-striped">
+  <thead>
+    <th class="text-center">
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" (change)="toggleSelectAllAccounts($event)" [checked]="selectCount == accounts.length && selectCount != 0"
+          [disabled]="accounts.length == 0" />
+      </div>
+    </th>
+    <th>Account ID</th>
+    <th>Company Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th class="text-center">Payment Terms</th>
+    <th class="text-center">Reminder Settings</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let account of accounts; let i = $index">
+      <td class="text-center">
+        <div class="form-group form-check">
+          <input type="checkbox" [(ngModel)]="account.selected" class="form-check-input" (change)="toggleSelectAccount($event)" />
+        </div>
+      </td>
+      <td>{{account.accountId}}</td>
+      <td>{{account.name}}</td>
+      <td>
+        <p *ngFor="let email of account.email">{{email}}</p>
+      </td>
+      <td>
+        <p *ngFor="let phone of account.phone">{{phone}}</p>
+      </td>
+      <td class="text-center">{{account.creditPeriod}}</td>
+      <td class="text-center">
+        <i class="fas fa-phone text-primary p-2" *ngIf="account.smsFlag"></i>
+        <i class="fas fa-envelope text-success p-2" *ngIf="account.emailFlag"></i>
+      </td>
+      <td>
+        <i class="fas fa-pen text-primary p-2 cursor" title="Edit Account"></i>
+        <i class="fas fa-trash text-danger p-2 cursor" title="Delete Account"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{{accounts | json}}
